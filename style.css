@@ -1,0 +1,183 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Blender Pro Med",sans-serif;
+    font-size: large;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 1) 0%,
+            rgba(25, 25, 25, 1) 100%
+        );
+    color: white;
+}
+@font-face {
+    font-family: "Blender Pro Med";
+    src: url("blenderpro-medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        rgba(25, 25, 25, 1),
+        transparent
+    );
+    margin: 20px 0;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.avatar{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:42px;
+}
+
+.subtitle{
+    color:#aaa;
+    margin-top:10px;
+}
+
+section{
+    max-width:1000px;
+    margin-top: 7spx;
+    margin-left: auto;
+    margin-right: auto;
+    padding:40px 20px;
+
+    background-color: rgb(71, 71, 71, 0.05);
+    border: solid 2px;
+    border-color: rgb(71, 71, 71);
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    transition: .2s;
+
+    background-color: rgb(71, 71, 71, 0.05);
+    border: solid 2px rgb(71, 71, 71);
+    
+    box-shadow: 0px 4px 12px rgba(45, 45, 45, 1);
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow: 0px 4px 12px rgba(75, 75, 75, 1);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card-button{
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.btn{
+    transition: 250ms;
+    display:inline-block;
+    padding:10px 15px;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+
+    background-color: rgb(71, 71, 71, 0.05);
+    border: solid 2px;
+    border-color: rgb(71, 71, 71);
+}
+
+.btn:hover {
+    background-color: rgb(221, 221, 221, 0.05);
+    border: solid 2px rgb(171, 171, 171);
+}
+.btn img {
+    width: 14px;
+    height: 14px;
+}
+
+section a {
+    color: rgba(228,199,137, 1);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+section a:hover {
+    color: #ffffff;
+}
+
+
+#popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup.active {
+    display: flex;
+}
+.window {
+    width: 80%;
+    height: 80%;
+}
+
+.window iframe {
+    border-radius: 2%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: white;
+}
+
+#close {
+    position: fixed; /* или absolute относительно popup */
+    top: 8%;
+    right: 8%;
+    background-color: transparent;
+    border: none;
+}
+#close img{
+    transition: 250ms;
+    filter: brightness(50%);
+}
+#close img:hover{
+    filter: brightness(100%);
+}
